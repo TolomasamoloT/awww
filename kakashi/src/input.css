@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.btn {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded;
+}
+
+.card {
+    @apply max-w-md w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md min-h-128 m-6
+    transform transition-all duration-300 hover:scale-105 
+}
