@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+    --color-regal-blue: #243c5a; 
+    --color-mantis: #65a30d;
+    --color-tolo-bolo: #fe6701;
+    --color-tolo-yolo: #ffa601;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.inky {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.inky > img {
+    width: 50%;
+}
+@media(max-width: 700px) {
+    .inky > img {
+        width: 100%;
+    }
+}
+
+.inky::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(tft-8k.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    mask-image: url(ink_lv2.gif);
+    mask-size: cover;
+    mask-position: center;
+}
+
+.btn {
+    @apply bg-cyan-500 shadow-lg shadow-cyan-500/50
+    hover:bg-cyan-700 text-white font-semibold text-center
+    py-2 rounded
+}
+
+.card {
+    @apply max-w-md 
+    flex flex-col
+    aspect-square
+    size-1/2
+    
+    p-6 bg-yellow-100 
+    rounded-lg shadow-md min-h-128 m-6
+    transform transition-all 
+    duration-300 
+    hover:scale-105
+}
+
+.autoShow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+
+}
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.autoShowLeft {
+    animation: autoShowAnimationLeft both ease-out;
+    animation-timeline: view(80% 10%);
+}
+
+@keyframes autoShowAnimationLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100vw) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.autoShowRight {
+    animation: autoShowAnimationRight both ease-out;
+    animation-timeline: view(80% 10%);
+}
+
+@keyframes autoShowAnimationRight {
+    from {
+        opacity: 0;
+        transform: translateX(100vw) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.review {
+    @apply text-3xl font-bold rounded py-5 px-20 m-6 text-gray-50
+}
+
+body {
+    overflow-x: hidden;
+}
